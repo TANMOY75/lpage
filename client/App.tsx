@@ -5,7 +5,13 @@ import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Outlet, NavLink } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  NavLink,
+} from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { cn } from "@/lib/utils";
@@ -55,7 +61,8 @@ function Layout() {
       <footer className="border-t py-8">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} QuickCopy — Built for Builder.io Dev Tools
+            © {new Date().getFullYear()} QuickCopy — Built for Builder.io Dev
+            Tools
           </p>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <a

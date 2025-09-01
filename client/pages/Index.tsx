@@ -17,7 +17,7 @@ export default function Index() {
   const [spaceId, setSpaceId] = useState("");
 
   const command = useMemo(() => {
-    const base = "\"@builder.io/dev-tools@latest\" code";
+    const base = '"@builder.io/dev-tools@latest" code';
     const urlPart = ` --url ${VCP_URL}`;
     const spacePart = spaceId ? ` --spaceId ${spaceId.trim()}` : "";
     if (manager === "npx") return `npx ${base}${urlPart}${spacePart}`;
@@ -60,7 +60,10 @@ export default function Index() {
             <div className="grid gap-4">
               <div className="grid gap-2">
                 <label className="text-sm font-medium">Package runner</label>
-                <Select value={manager} onValueChange={(v) => setManager(v as any)}>
+                <Select
+                  value={manager}
+                  onValueChange={(v) => setManager(v as any)}
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Select" />
                   </SelectTrigger>
@@ -72,7 +75,9 @@ export default function Index() {
                 </Select>
               </div>
               <div className="grid gap-2">
-                <label className="text-sm font-medium">Builder Space ID (optional)</label>
+                <label className="text-sm font-medium">
+                  Builder Space ID (optional)
+                </label>
                 <Input
                   placeholder="e.g. 123abc456def..."
                   value={spaceId}
@@ -108,7 +113,11 @@ export default function Index() {
           title="Open your terminal"
           desc="Navigate to your project root where you want the code generated."
         />
-        <Step index={2} title="Run the command" desc="Paste the command above and press Enter." />
+        <Step
+          index={2}
+          title="Run the command"
+          desc="Paste the command above and press Enter."
+        />
         <Step
           index={3}
           title="Customize & ship"
@@ -119,7 +128,15 @@ export default function Index() {
   );
 }
 
-function Step({ index, title, desc }: { index: number; title: string; desc: string }) {
+function Step({
+  index,
+  title,
+  desc,
+}: {
+  index: number;
+  title: string;
+  desc: string;
+}) {
   return (
     <div className="relative rounded-xl border bg-card p-6 shadow-sm">
       <div className="absolute -top-3 left-6 inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-indigo-500 px-2 text-xs font-bold text-white shadow-sm">
